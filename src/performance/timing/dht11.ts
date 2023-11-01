@@ -8,23 +8,32 @@ let iotService = new IotService();
 const sensors: Array<IIoTSensorData> = [
   {
     data: {
-      name: "Rele",
+      name: "DHT11",
       values: [
         {
-          idv: "status",
-          type: "bool",
-          default: "false",
+          idv: "temperature",
+          type: "uint",
+          default: "",
+          max: "10",
+          min: "0",
+        },
+        {
+          idv: "humidity",
+          type: "uint",
+          default: "",
+          max: "10",
+          min: "0",
         },
       ],
     },
   },
 ];
 
-export const timingMesureRele = ()=>{
+export const timingMesureDHT11 = ()=>{
   const modelingTimePerformance = mesureTimeOf("modeling", ()=>{
     // Creating model
     iotService.createModel(sensors);
-  }, ()=>{
+  },()=>{
     iotService = new IotService();
   })
   

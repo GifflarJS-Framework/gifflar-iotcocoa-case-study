@@ -1,3 +1,4 @@
+import { timingMesureDHT11 } from "./timing/dht11";
 import { timingMesureRele } from "./timing/rele";
 
 // Timing
@@ -6,8 +7,12 @@ console.group();
 
 console.log("RELE");
 console.group();
-const data = timingMesureRele()
-console.table(data)
+console.table(timingMesureRele())
+console.groupEnd();
+
+console.log("DHT11");
+console.group();
+console.table(timingMesureDHT11())
 console.groupEnd();
 
 console.groupEnd();
