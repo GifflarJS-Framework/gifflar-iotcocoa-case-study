@@ -6,7 +6,7 @@ interface IOptions{
   fixed: number
 }
 
-export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IOptions = {runs:10, fixed:4}){
+export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IOptions = {runs:200, fixed:4}){
   const {runs, fixed} = options
 
   const _runs = runs+2
