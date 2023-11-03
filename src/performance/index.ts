@@ -1,3 +1,5 @@
+import { cpuMesureDHT11 } from "./cpu/dht11";
+import { cpuMesureRele } from "./cpu/rele";
 import { memoryMesureDHT11 } from "./memory/dht11";
 import { memoryMesureRele } from "./memory/rele";
 import { timingMesureDHT11 } from "./timing/dht11";
@@ -31,6 +33,22 @@ console.groupEnd();
 console.log("DHT11");
 console.group();
 console.table(memoryMesureDHT11())
+console.groupEnd();
+
+console.groupEnd();
+
+// CPU
+console.log("CPU");
+console.group();
+
+console.log("RELE");
+console.group();
+console.table(cpuMesureRele())
+console.groupEnd();
+
+console.log("DHT11");
+console.group();
+console.table(cpuMesureDHT11())
 console.groupEnd();
 
 console.groupEnd();
