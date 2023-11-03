@@ -1,4 +1,4 @@
-import { parseHrtimeToSeconds } from "performance/utils/parse-hrmtime-to-secs"
+import { parseHrtimeToMiliseconds } from "performance/utils/parse-hrmtime-to-milisecs"
 
 
 interface IOptions{
@@ -20,7 +20,7 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
     const start = process.hrtime()
     func()
     const diffHrtime = process.hrtime(start)
-    const secs = parseHrtimeToSeconds(diffHrtime)
+    const secs = parseHrtimeToMiliseconds(diffHrtime)
     
     
     // Dropping the first two
@@ -40,9 +40,9 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
 
   return {
     name, 
-    mean: mean.toFixed(fixed), 
+    "mean (milisecs)": mean.toFixed(fixed),
     min: min.toFixed(fixed),
-    max: max.toFixed(fixed), 
+    max: max.toFixed(fixed),
     runs
   }
 }
