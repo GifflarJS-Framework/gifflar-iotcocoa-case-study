@@ -1,9 +1,7 @@
-interface IOptions{
-  runs: number
-  fixed: number
-}
+import { IMeasureOptions } from "./types/imeasure-options"
+import { IMeasureReturn } from "./types/imeasure-return"
 
-export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, options: IOptions = {runs:200, fixed:4}){
+export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -40,7 +38,7 @@ export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, op
 
   return {
     name, 
-    "mean (KB)": mean.toFixed(fixed),
+    mean: mean.toFixed(fixed),
     min: min.toFixed(fixed),
     max: max.toFixed(fixed),
     runs

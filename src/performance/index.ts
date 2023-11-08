@@ -1,54 +1,78 @@
-import { cpuMesureDHT11 } from "./cpu/dht11";
-import { cpuMesureRele } from "./cpu/rele";
-import { memoryMesureDHT11 } from "./memory/dht11";
-import { memoryMesureRele } from "./memory/rele";
-import { timingMesureDHT11 } from "./timing/dht11";
-import { timingMesureRele } from "./timing/rele";
+import { dht11, rele } from "./sensors";
+import { pTest, pTestGroup } from "./utils/test";
+import {resolve} from "node:path"
 
 // Timing
-console.log("TIMING");
-console.group();
+pTestGroup({type: "time", name: "RELE", logOn: false, outCsvFilePath: resolve(__dirname, "out", "timing_rele.csv")}, ()=>{
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "writing",
+  })
+})
 
-console.log("RELE");
-console.group();
-console.table(timingMesureRele())
-console.groupEnd();
-
-console.log("DHT11");
-console.group();
-console.table(timingMesureDHT11())
-console.groupEnd();
-
-console.groupEnd();
+pTestGroup({type: "time", name: "DHT11", logOn: false, outCsvFilePath: resolve(__dirname, "out", "timing_dht11.csv")}, ()=>{
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "writing",
+  })
+})
 
 // Memory
-console.log("MEMORY");
-console.group();
+pTestGroup({type: "memory", name: "RELE", logOn: false, gcOn: true, outCsvFilePath: resolve(__dirname, "out", "memory_rele.csv")}, ()=>{
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "writing",
+  })
+})
 
-console.log("RELE");
-console.group();
-console.table(memoryMesureRele())
-console.groupEnd();
-
-console.log("DHT11");
-console.group();
-console.table(memoryMesureDHT11())
-console.groupEnd();
-
-console.groupEnd();
+pTestGroup({type: "memory", name: "DHT11", logOn: false, gcOn: true, outCsvFilePath: resolve(__dirname, "out", "memory_dht11.csv")}, ()=>{
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "writing",
+  })
+})
 
 // CPU
-console.log("CPU");
-console.group();
+pTestGroup({type: "cpu", name: "RELE", logOn: false, outCsvFilePath: resolve(__dirname, "out", "cpu_rele.csv")}, ()=>{
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: rele,
+    gifflarStep: "writing",
+  })
+})
 
-console.log("RELE");
-console.group();
-console.table(cpuMesureRele())
-console.groupEnd();
-
-console.log("DHT11");
-console.group();
-console.table(cpuMesureDHT11())
-console.groupEnd();
-
-console.groupEnd();
+pTestGroup({type: "cpu", name: "DHT11", logOn: false, outCsvFilePath: resolve(__dirname, "out", "cpu_dht11.csv")}, ()=>{
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "modeling",
+  })
+  
+  pTest({
+    sensorsArg: dht11,
+    gifflarStep: "writing",
+  })
+})

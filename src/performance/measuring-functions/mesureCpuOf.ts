@@ -1,9 +1,8 @@
-interface IOptions{
-  runs: number
-  fixed: number
-}
+import "expose-gc"
+import { IMeasureReturn } from "./types/imeasure-return"
+import { IMeasureOptions } from "./types/imeasure-options"
 
-export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, options: IOptions = {runs:200, fixed:4}){
+export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -41,7 +40,7 @@ export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, optio
 
   return {
     name, 
-    "mean (%)": mean.toFixed(fixed),
+    mean: mean.toFixed(fixed),
     min: min.toFixed(fixed),
     max: max.toFixed(fixed),
     runs

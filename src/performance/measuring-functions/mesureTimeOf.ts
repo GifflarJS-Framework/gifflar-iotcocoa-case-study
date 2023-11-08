@@ -1,12 +1,8 @@
 import { parseHrtimeToMiliseconds } from "performance/utils/parse-hrmtime-to-milisecs"
+import { IMeasureReturn } from "./types/imeasure-return"
+import { IMeasureOptions } from "./types/imeasure-options"
 
-
-interface IOptions{
-  runs: number
-  fixed: number
-}
-
-export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IOptions = {runs:200, fixed:4}){
+export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -21,7 +17,6 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
     func()
     const diffHrtime = process.hrtime(start)
     const secs = parseHrtimeToMiliseconds(diffHrtime)
-    
     
     // Dropping the first two
     if(i > 2){
@@ -40,7 +35,7 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
 
   return {
     name, 
-    "mean (milisecs)": mean.toFixed(fixed),
+    mean: mean.toFixed(fixed),
     min: min.toFixed(fixed),
     max: max.toFixed(fixed),
     runs

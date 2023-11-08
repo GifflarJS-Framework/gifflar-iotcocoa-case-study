@@ -2,3 +2,4 @@ node_modules/
 gifflarconfig.json
 yarn.lock
 yarn-error.log
+out
