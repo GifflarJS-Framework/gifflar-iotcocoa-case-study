@@ -121,7 +121,7 @@ export function pTestGroup({type, name, outCsvFilePath, logOn = false, gcOn = fa
           if(fs.existsSync(outCsvFilePath)){
             fs.writeFileSync(outCsvFilePath, `${csvData.values}\n`, {encoding: "utf-8", flag: "a"});
           }else{
-            fs.writeFileSync(outCsvFilePath, `${csvData.keys}\n${csvData.values}\n`, {encoding: "utf-8", flag: "a"});
+            fs.writeFileSync(outCsvFilePath, `${csvData.keys}\n${csvData.values}\n`, {encoding: "utf-8", flag: "w"});
           }
         }
       }
