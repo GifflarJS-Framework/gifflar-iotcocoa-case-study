@@ -1,6 +1,12 @@
 # Gifflar IoTCocoa case study and performance evaluation
+This repo is a case study of using Gifflar in an IoT project called IoTCocoa, a project that aims to create a system for monitoring the gourmet cocoa production. The IoTCocoa uses sensors and actuators to capture data and later save it in the blockchain using smart contracts.
+
+To simulate these sensors and actuators, this repository created four types of devices objects that could be used by the IoTCocoa project. The devices where a `Rele`, a `DHT11` sensor (temperature and humidity sensor), `Servo Motor` and a `Air Conditioner`. You can see in [src/performance/sensors.ts](https://github.com/GifflarJS-Framework/gifflar-iotcocoa-case-study/blob/main/src/performance/sensors.ts) that, in this sequence, the device object data increases. This was intentional, so we can understand more about Gifflar's performance as we increase the object JSON data.
+
+# Index
 
 - [Gifflar IoTCocoa case study and performance evaluation](#gifflar-iotcocoa-case-study-and-performance-evaluation)
+- [Index](#index)
   - [Dependencies](#dependencies)
   - [Run the application](#run-the-application)
   - [Run all performance tests](#run-all-performance-tests)
