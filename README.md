@@ -65,9 +65,9 @@ This will generate a csv file inside `src/out` folder for each performance test.
 yarn performance:it --sensor=rele --step=modeling --measure=time
 ```
 
-`measure`: "time" | "memory" | "cpu"
-`sensor`: "rele" | "dht11" | "servoMotor" | "airConditioner"
-`step`: "modeling" | "writing"
+- `measure`: "time" | "memory" | "cpu"
+- `sensor`: "rele" | "dht11" | "servoMotor" | "airConditioner"
+- `step`: "modeling" | "writing"
 
 This will generate a csv file inside `src/out` folder of this unique performance test. The csv file will contain the `mean`, `max` and `min` values of all the repetitions the code mande. The default repetitions is `200`, that is, the performance test will run the test `200` times (you can change this later).
 
