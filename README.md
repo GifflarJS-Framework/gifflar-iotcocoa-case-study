@@ -1,5 +1,40 @@
 # Gifflar IoTCocoa case study and performance evaluation
 
+- [Gifflar IoTCocoa case study and performance evaluation](#gifflar-iotcocoa-case-study-and-performance-evaluation)
+  - [Dependencies](#dependencies)
+  - [Run the application](#run-the-application)
+  - [Run all performance tests](#run-all-performance-tests)
+  - [Run individual performance test](#run-individual-performance-test)
+    - [Generating all the repetition results](#generating-all-the-repetition-results)
+
+## Dependencies
+
+- Install the dependencies:
+
+```bash
+yarn
+```
+
+or
+
+```bash
+npm i
+```
+
+- Install Gifflar globally
+
+```bash
+npm i -g @gifflar/core
+```
+
+- Generate gifflar config file `gifflarconfig.json`.
+
+```bash
+gifflar init .
+```
+
+This command will ask you if you want to init a gifflar config file inside an existing project, you can confirm that by typing `y` in terminal.
+
 ## Run the application
 
 Run this following command to execute the application and generate the sensors/actuators smart contracts with gifflar.

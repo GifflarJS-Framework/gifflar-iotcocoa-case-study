@@ -13,13 +13,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@gifflar/solgen": "git+https://github.com/GifflarJS-Framework/solgen.git#build"
+    "@gifflar/solgen": "^1.0.3-alpha"
   },
   "devDependencies": {
+    "@gifflar/types": "^1.0.0",
     "expose-gc": "^1.0.0",
     "ts-node-dev": "^2.0.0",
     "tsconfig-paths": "^4.1.0",
-    "types-gifflar": "git+https://github.com/GifflarJS-Framework/types-gifflar.git",
     "typescript": "^4.7.3"
   }
 }
