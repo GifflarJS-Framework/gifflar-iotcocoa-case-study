@@ -6,6 +6,7 @@
   "scripts": {
     "start": "ts-node -r tsconfig-paths/register src/index.ts",
     "performance": "ts-node -r tsconfig-paths/register src/performance/index.ts",
+    "performance:it": "ts-node -r tsconfig-paths/register src/performance/test-with-arguments.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

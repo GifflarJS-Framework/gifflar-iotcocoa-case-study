@@ -1,0 +1,1 @@
+yarn performance:it --sensor=rele --measure=time --step=modeling > ./src/performance/out/time_rele_modeling.txt

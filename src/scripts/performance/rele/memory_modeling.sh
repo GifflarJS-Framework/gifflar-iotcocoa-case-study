@@ -1,0 +1,1 @@
+yarn performance:it --sensor=rele --measure=memory --step=modeling > ./src/performance/out/memory_rele_modeling.txt

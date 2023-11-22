@@ -1,0 +1,1 @@
+yarn performance:it --sensor=rele --measure=cpu --step=modeling > ./src/performance/out/cpu_rele_modeling.txt

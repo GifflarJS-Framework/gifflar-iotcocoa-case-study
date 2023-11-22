@@ -20,6 +20,9 @@ export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, op
       memoryUsedInKb = endMemoryUsedInKb - startMemoryUsedInKb
       memoryUsedInKb =  (memoryUsedInKb / 1024 * 100) / 100;
     }while(memoryUsedInKb < 0);
+
+    // console.log(memoryUsedInKb);
+    
     
     // Dropping the first two
     if(i > 2){

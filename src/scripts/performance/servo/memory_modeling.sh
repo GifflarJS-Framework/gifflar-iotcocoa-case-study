@@ -1,0 +1,1 @@
+yarn performance:it --sensor=servoMotor --measure=memory --step=modeling > ./src/performance/out/memory_servo_modeling.txt

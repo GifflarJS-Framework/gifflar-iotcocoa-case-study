@@ -1,0 +1,1 @@
+yarn performance:it --sensor=airConditioner --measure=cpu --step=modeling > ./src/performance/out/cpu_airconditioner_modeling.txt

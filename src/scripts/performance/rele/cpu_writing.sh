@@ -1,0 +1,1 @@
+yarn performance:it --sensor=rele --measure=cpu --step=writing > ./src/performance/out/cpu_rele_writing.txt

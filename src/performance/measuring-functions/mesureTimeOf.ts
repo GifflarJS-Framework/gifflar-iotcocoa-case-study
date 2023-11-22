@@ -17,6 +17,8 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
     func()
     const diffHrtime = process.hrtime(start)
     const secs = parseHrtimeToMiliseconds(diffHrtime)
+    // console.log(secs);
+    
     
     // Dropping the first two
     if(i > 2){

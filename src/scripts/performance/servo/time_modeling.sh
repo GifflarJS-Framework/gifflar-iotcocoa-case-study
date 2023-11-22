@@ -1,0 +1,1 @@
+yarn performance:it --sensor=servoMotor --measure=time --step=modeling > ./src/performance/out/time_servo_modeling.txt

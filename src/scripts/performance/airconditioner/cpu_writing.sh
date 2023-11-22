@@ -1,0 +1,1 @@
+yarn performance:it --sensor=airConditioner --measure=cpu --step=writing > ./src/performance/out/cpu_airconditioner_writing.txt

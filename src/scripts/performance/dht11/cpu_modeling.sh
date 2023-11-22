@@ -1,0 +1,1 @@
+yarn performance:it --sensor=dht11 --measure=cpu --step=modeling > ./src/performance/out/cpu_dht11_modeling.txt

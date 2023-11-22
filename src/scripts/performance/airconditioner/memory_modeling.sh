@@ -1,0 +1,1 @@
+yarn performance:it --sensor=airConditioner --measure=memory --step=modeling > ./src/performance/out/memory_airconditioner_modeling.txt

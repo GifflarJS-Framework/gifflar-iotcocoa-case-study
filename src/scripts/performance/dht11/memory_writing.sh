@@ -1,0 +1,1 @@
+yarn performance:it --sensor=dht11 --measure=memory --step=writing > ./src/performance/out/memory_dht11_writing.txt

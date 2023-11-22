@@ -1,0 +1,1 @@
+yarn performance:it --sensor=dht11 --measure=time --step=modeling > ./src/performance/out/time_dht11_modeling.txt

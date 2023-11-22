@@ -1,0 +1,1 @@
+yarn performance:it --sensor=rele --measure=memory --step=writing > ./src/performance/out/memory_rele_writing.txt

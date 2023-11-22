@@ -20,8 +20,10 @@ export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, optio
       const endCpuUsedInKb = process.cpuUsage().user
       cpuUsagePercentage = endCpuUsedInKb - startCpuUsedInKb
       cpuUsagePercentage =  100 * (cpuUsagePercentage / 10000)
-      
     }while(cpuUsagePercentage < 0);
+
+    // console.log(cpuUsagePercentage);
+    
     
     // Dropping the first two
     if(i > 2){

@@ -1,0 +1,1 @@
+yarn performance:it --sensor=servoMotor --measure=cpu --step=writing > ./src/performance/out/cpu_servo_writing.txt

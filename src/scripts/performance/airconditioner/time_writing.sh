@@ -1,0 +1,1 @@
+yarn performance:it --sensor=airConditioner --measure=time --step=writing > ./src/performance/out/time_airconditioner_writing.txt
