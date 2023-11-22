@@ -1,5 +1,21 @@
 # Gifflar IoTCocoa case study and performance evaluation
 
+## Run the application
+
+Run this following command to execute the application and generate the sensors/actuators smart contracts with gifflar.
+
+```bash
+yarn start
+```
+
+or
+
+```bash
+npm start
+```
+
+This command will generate the smart contracts inside the `src/contracts` folder. Every time you run the command, the contracts are rewritten.
+
 ## Run all performance tests
 
 ```

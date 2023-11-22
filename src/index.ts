@@ -5,42 +5,6 @@ import fs from "fs";
 
 const iotService = new IotService();
 
-const sensors: Array<IIoTSensorData> = [
-  {
-    data: {
-      name: "DHT11",
-      values: [
-        {
-          idv: "temperature",
-          type: "uint",
-          default: "",
-          max: "10",
-          min: "0",
-        },
-        {
-          idv: "humidity",
-          type: "uint",
-          default: "",
-          max: "10",
-          min: "0",
-        },
-      ],
-    },
-  },
-  {
-    data: {
-      name: "Rele",
-      values: [
-        {
-          idv: "status",
-          type: "bool",
-          default: "false",
-        },
-      ],
-    },
-  },
-];
-
 iotService.createModel(rele.concat(dht11, servoMotor, airConditioner));
 
 // Writing contracts
