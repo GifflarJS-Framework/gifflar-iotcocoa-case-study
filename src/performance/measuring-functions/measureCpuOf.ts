@@ -2,7 +2,7 @@ import "expose-gc"
 import { IMeasureReturn } from "./types/imeasure-return"
 import { IMeasureOptions } from "./types/imeasure-options"
 
-export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
+export function measureCpuOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -22,8 +22,8 @@ export function mesureCpuOf(name: string, func: ()=>void, reset: ()=>void, optio
       cpuUsagePercentage =  100 * (cpuUsagePercentage / 10000)
     }while(cpuUsagePercentage < 0);
 
+    // *Uncomment this next line to get the data for each repetition
     // console.log(cpuUsagePercentage);
-    
     
     // Dropping the first two
     if(i > 2){

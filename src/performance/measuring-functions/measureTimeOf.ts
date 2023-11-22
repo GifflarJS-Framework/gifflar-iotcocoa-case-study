@@ -2,7 +2,7 @@ import { parseHrtimeToMiliseconds } from "performance/utils/parse-hrmtime-to-mil
 import { IMeasureReturn } from "./types/imeasure-return"
 import { IMeasureOptions } from "./types/imeasure-options"
 
-export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
+export function measureTimeOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -17,8 +17,9 @@ export function mesureTimeOf(name: string, func: ()=>void, reset: ()=>void, opti
     func()
     const diffHrtime = process.hrtime(start)
     const secs = parseHrtimeToMiliseconds(diffHrtime)
-    // console.log(secs);
     
+    // *Uncomment this next line to get the data for each repetition
+    // console.log(secs);
     
     // Dropping the first two
     if(i > 2){

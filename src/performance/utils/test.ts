@@ -1,6 +1,6 @@
-import { mesureCpuOf } from "performance/measuring-functions/mesureCpuOf";
-import { mesureMemoryOf } from "performance/measuring-functions/mesureMemoryOf";
-import { mesureTimeOf } from "performance/measuring-functions/mesureTimeOf";
+import { measureCpuOf } from "performance/measuring-functions/measureCpuOf";
+import { measureMemoryOf } from "performance/measuring-functions/measureMemoryOf";
+import { measureTimeOf } from "performance/measuring-functions/measureTimeOf";
 import { IMeasureOptions } from "performance/measuring-functions/types/imeasure-options";
 import { IMeasureReturn } from "performance/measuring-functions/types/imeasure-return";
 import IotService from "services/IotService";
@@ -29,15 +29,15 @@ interface IMeasureDataByType{
 const measureDataByType: IMeasureDataByType = {
   time: {
     title: "TIMING (milisecs)",
-    measureFunc: mesureTimeOf
+    measureFunc: measureTimeOf
   },
   memory: {
     title: "MEMORY (KB)",
-    measureFunc: mesureMemoryOf
+    measureFunc: measureMemoryOf
   },
   cpu: {
     title: "CPU (%)",
-    measureFunc: mesureCpuOf
+    measureFunc: measureCpuOf
   }
 }
 

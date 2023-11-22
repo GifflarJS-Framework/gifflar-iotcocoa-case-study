@@ -1,7 +1,7 @@
 import { IMeasureOptions } from "./types/imeasure-options"
 import { IMeasureReturn } from "./types/imeasure-return"
 
-export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
+export function measureMemoryOf(name: string, func: ()=>void, reset: ()=>void, options: IMeasureOptions = {runs:200, fixed:4}): IMeasureReturn{
   const {runs, fixed} = options
 
   const _runs = runs+2
@@ -21,8 +21,8 @@ export function mesureMemoryOf(name: string, func: ()=>void, reset: ()=>void, op
       memoryUsedInKb =  (memoryUsedInKb / 1024 * 100) / 100;
     }while(memoryUsedInKb < 0);
 
+    // *Uncomment this next line to get the data for each repetition
     // console.log(memoryUsedInKb);
-    
     
     // Dropping the first two
     if(i > 2){
