@@ -20,7 +20,7 @@ yarn performance:it --sensor=rele --step=modeling --measure=time
 
 This will generate a csv file inside `src/out` folder of this unique performance test. The csv file will contain the `mean`, `max` and `min` values of all the repetitions the code mande. The default repetitions is `200`, that is, the performance test will run the test `200` times (you can change this later).
 
-**Generating all the repetition results**
+### Generating all the repetition results
 You might want to receive the data result from each repetition, that is, generate the `200` output values. For that, you can go to the `src/performance/measuring-functions` and uncomment a single line in each measure function.
 
 `measureTimeOf`:
@@ -62,7 +62,7 @@ Then you can use the scripts in `scripts/performance` to execute each performanc
 ./src/scripts/performance/rele/time_modeling.sh
 ```
 
-before running that command, you might need to give permission to the user to execute this script:
+Before running that command, you might need to give permission to the user to execute this script:
 
 ```bash
 chmod 777 ./src/scripts/performance/rele/time_modeling.sh
