@@ -8,8 +8,8 @@ const iotService = new IotService();
 iotService.createModel(rele.concat(dht11, servoMotor, airConditioner));
 
 // Writing contracts
-const codeDHT11 = iotService.writeByName(rele[0].data.name);
-const codeRele = iotService.writeByName(dht11[0].data.name);
+const codeDHT11 = iotService.writeByName(dht11[0].data.name);
+const codeRele = iotService.writeByName(rele[0].data.name);
 const codeServo = iotService.writeByName(servoMotor[0].data.name);
 const codeAirConditioner = iotService.writeByName(airConditioner[0].data.name);
 

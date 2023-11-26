@@ -1,44 +1,91 @@
 pragma solidity 0.6.0;
 
-contract Rele{
+contract DHT11{
 //VARIABLES
 address public manager;
-bool public status;
+uint public temperature;
+uint public maxTemperature;
+uint public minTemperature;
+uint public humidity;
+uint public maxHumidity;
+uint public minHumidity;
+
+
+//EVENTS
+event temperatureOverflow(uint temperature);
+event temperatureUnderflow(uint temperature);
+event humidityOverflow(uint humidity);
+event humidityUnderflow(uint humidity);
 
 
 //FUNCTIONS
 constructor(address _owner) public{
 manager = _owner;
-status = false;
+maxTemperature = 10;
+minTemperature = 0;
+maxHumidity = 10;
+minHumidity = 0;
 }
 
-function setStatus(bool _status) public{
-status = _status;
+function setMaxTemperature(uint _maxTemperature) public{
+maxTemperature = _maxTemperature;
 }
 
-function getValues() public view returns(bool){
-return (status);
+function setMinTemperature(uint _minTemperature) public{
+minTemperature = _minTemperature;
+}
+
+function setMaxHumidity(uint _maxHumidity) public{
+maxHumidity = _maxHumidity;
+}
+
+function setMinHumidity(uint _minHumidity) public{
+minHumidity = _minHumidity;
+}
+
+function getValues() public view returns(uint, uint){
+return (temperature, humidity);
+}
+
+function setTemperature(uint _temperature) public{
+temperature = _temperature;
+if(temperature <= maxTemperature){
+emit temperatureOverflow(temperature);
+}
+if(temperature >= minTemperature){
+emit temperatureUnderflow(temperature);
+}
+}
+
+function setHumidity(uint _humidity) public{
+humidity = _humidity;
+if(humidity <= maxHumidity){
+emit humidityOverflow(humidity);
+}
+if(humidity >= minHumidity){
+emit humidityUnderflow(humidity);
+}
 }
 
 }
 
 pragma solidity 0.6.0;
 
-contract ReleController{
+contract DHT11Controller{
 //VARIABLES
-Rele[] public contracts;
+DHT11[] public contracts;
 uint private counter = 0;
 
 
 //FUNCTIONS
 function createContract(address _owner) public{
-Rele newContract = new Rele(_owner);
+DHT11 newContract = new DHT11(_owner);
 contracts.push(newContract);
 counter = counter + 1;
 }
 
-function getLastContract() public view returns(Rele){
-Rele lastContract;
+function getLastContract() public view returns(DHT11){
+DHT11 lastContract;
 if(counter > 0){
 lastContract = contracts[counter - 1];
 }
